@@ -40,4 +40,4 @@ if __name__ == "__main__":
     try:
         command(n, msg)
     except Exception as err:
-        sys.exit(f"Error: {err}")
+        sys.exit(f"Error: ({type(err)}) {err}")
