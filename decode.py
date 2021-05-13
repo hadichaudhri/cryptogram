@@ -54,11 +54,11 @@ def encoded_ords_to_matrix(n, ords):
 
 
 def validate_encoded_message(msg):
-    """Ensures that the encoded message only contains numbers and spaces
+    """Ensures that the encoded message only contains integers and spaces
 
     Args:
         msg (str): Space-delimited string of encoded orbitals
     """
-    NUMERIC_AND_SPACE_ONLY_REGEX = re.compile("^[0-9\s]*$")
+    NUMERIC_AND_SPACE_ONLY_REGEX = re.compile("^(?:(?:-?\d)?\s?)*$")
     if not (NUMERIC_AND_SPACE_ONLY_REGEX.match(msg)):
-        sys.exit(f"The encoded message may only contain numbers and spaces.")
+        sys.exit(f"The encoded message may only contain integers and spaces.")
